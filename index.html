@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stlye.css">
+
+        <link rel="stylesheet" id="theme" href="dark.css">
+
+        <script>
+            document.getElementById("theme").href = (localStorage.getItem("theme") || "dark") + ".css";
+        </script>
+
+        <title>Fritz tut ist ein e</title>
+    </head>
+    <body>
+        <div class="nav-spacer"></div>
+        <nav>
+            <h1 class="title">KekBlog</h1>
+            <div class="links">
+                <a class="active" href="#home">Home</a>
+                <a href="#login">Login</a>
+                <a href="#register">Register</a>
+                <a href="#about">About</a>
+            </div>
+            <script>
+                const links = document.querySelectorAll(".links a");
+                let active = links[0].classList;
+                for(let link of links) {
+                    link.addEventListener("click", (e) => {
+                        active.remove("active");
+                        e.target.classList.add("active");
+                        active = e.target.classList;
+                    });
+                }
+            </script>
+        </nav>
+        <main>
+            <h1>Blog title</h1>
+            <div class="written-by">
+                <p>Written by</üp>
+                <div class="author">
+                    <img src="assets/author/sample.webp" alt="avatar">
+                    <div class="wrapper">
+                        <h3>Della</h3>
+                        <p>Web Engineering Intern</p>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa voluptatem ipsam rem beatae fuga incidunt, asperiores ipsa! Itaque, tempore eius, minima recusandae, laborum laudantium modi aperiam repellendus at ipsum quam.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero blanditiis, quasi necessitatibus ipsum eligendi, doloremque est id quos iure earum officia sequi perferendis! Libero corrupti praesentium magnam est, fuga repellendus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nisi autem, aliquid hic quibusdam dicta sed incidunt dolorum, eius alias voluptatibus ipsum aut officiis animi optio pariatur odit fugiat repudiandae?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente rerum quia debitis, consequatur distinctio quisquam exercitationem tempora maiores fugit atque iste praesentium consectetur magnam incidunt ea impedit dolore quaerat quam?
+            </p>
+        </main>
+        <footer>
+            <button id="theme-selector">Select</button>
+            <script>
+                const button = document.getElementById("theme-selector");
+                let theme = (localStorage.getItem("theme") || "dark") === "dark";
+
+                button.innerText = theme ? "Light" : "Dark";
+
+                button.addEventListener("click", () => {
+                    theme = !theme;
+                    const name = theme ? "dark" : "light";
+                    button.innerText = theme ? "Light" : "Dark";
+                    localStorage.setItem("theme", name);
+                    document.getElementById("theme").href = `${name}.css`;
+                });
+            </script>
+            <p>Hey this awsome blog was made with 💕 by KekOnTheWorld</p>
+            <p>&copy Copyright KekOnTheWorld 2022</p>
+        </footer>
+    </body>
+</html>

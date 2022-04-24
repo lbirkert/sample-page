@@ -1,0 +1,17 @@
+:root {
+    --brand-color: rgb(201, 42, 42);
+    --color: #000;
+    --color-active: var(--brand-color);
+    --color-secondary: rgb(61, 61, 61);
+    --color-hint: rgb(84, 43, 180);
+    --background: #fff;
+    --button-background: rgb(121, 0, 0);
+    --button-color: #fff;
+    --nav-background: #fff;
+    --nav-border: 1px solid rgba(0, 0, 0, 0.3);
+    --footer-background: #fff;
+    --footer-border: 1px solid rgba(0, 0, 0, 0.3);
+    --a-color: #000;
+    --a-color-hover: rgb(187, 0, 0);
+    --a-border: var(--brand-color);
+}
